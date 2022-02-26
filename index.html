@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Lamuzh</title>
+    <link rel="icon" type="image/x-icon" href="img/Lamuzh Favicon.png" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="circle">
+        <img class="maincircle" src="img/Main Circle.SVG" alt="Main Circle" />
+        <img
+          class="maincircle2"
+          src="img/Main Circle 2.SVG"
+          alt="Main Circle 2"
+        />
+        <div class="closebutton"></div>
+
+        <video
+          class="twod transition04"
+          src="img/2D.webm"
+          autoplay
+          loop
+          muted
+        ></video>
+        <img class="rect1 rect" src="img/2D HC.SVG" alt="2D HC" />
+        <img class="desk1 desk" src="img/2D Lable.SVG" alt="2D Lable" />
+        <p class="twotxt text">موشن گرافیک <br />دو بعدی</p>
+
+        <video
+          class="threed transition04"
+          src="img/3D.webm"
+          autoplay
+          loop
+          muted
+        ></video>
+        <img class="rect2 rect" src="img/3D HC.SVG" alt="3D HC" />
+        <img class="desk2 desk" src="img/3D Lable.SVG" alt="3D Lable" />
+        <p class="threetxt text">موشن گرافیک <br />سه بعدی</p>
+
+        <video
+          class="video-editing transition04"
+          src="img/video editing.webm"
+          autoplay
+          loop
+          muted
+        ></video>
+        <img
+          class="rect3 rect"
+          src="img/Video Editing HC.SVG"
+          alt="Video Editing HC"
+        />
+        <img
+          class="desk3 desk"
+          src="img/Video Editing Lable.SVG"
+          alt="Video Editing Lable"
+        />
+        <p class="videotxt text">تدوین</p>
+
+        <video
+          class="web transition04"
+          src="img/web.webm"
+          autoplay
+          loop
+          muted
+        ></video>
+        <img class="rect4 rect" src="img/Web HC.SVG" alt="Web HC" />
+        <img class="desk4 desk" src="img/Web Lable.SVG" alt="Web Lable" />
+        <p class="webtxt text">وب سایت</p>
+
+        <video
+          class="logo-designing transition04"
+          src="img/Logo.webm"
+          autoplay
+          loop
+          muted
+        ></video>
+        <img class="rect5 rect" src="img/Logo HC.SVG" alt="Logo HC" />
+        <img class="desk5 desk" src="img/Logo Lable.SVG" alt="Logo Lable" />
+        <p class="logotxt text">لوگو</p>
+
+        <video
+          class="design transition04"
+          src="img/Desinging.webm"
+          autoplay
+          loop
+          muted
+        ></video>
+        <img class="rect6 rect" src="img/Desinging HC.SVG" alt="Desinging HC" />
+        <img
+          class="desk6 desk"
+          src="img/Desinging Lable.SVG"
+          alt="Desinging Lable"
+        />
+        <p class="designtxt text">طراحی<br />( ... کتاب و )</p>
+
+        <form>
+          <select class="noekhedmat" name="noekhedmat" id="noekhedmat">
+            <option class="entekhab" disabled value="" selected>
+              انتخاب کنید
+            </option>
+            <option value="motion3d">موشن گرافیک سه بعدی</option>
+            <option value="motion2d">موشن گرافیک دو بعدی</option>
+            <option value="edit">ت</option>
+            <option value="">NaN</option></select
+          ><br /><br />
+          <label class="showit" style="display: none">: زمان انتخابی</label>
+          <div style="display: none" class="range-wrap showit">
+            <input
+              style="display: none"
+              id="sec"
+              min="1"
+              max="300"
+              value="1"
+              type="range"
+              class="range showit"
+            />
+            <output class="bubble showit"></output>
+          </div>
+          <label class="showit" style="display: none">طراحی کارکتر</label>
+          <input
+            class="showit"
+            style="display: none"
+            id="checkit"
+            type="checkbox"
+          />
+          <p id="gheymatt"></p>
+          <script>
+            var numinp = document.getElementById("sec");
+            var nkh = document.getElementById("noekhedmat");
+            var cit = document.getElementById("checkit");
+            function mohasebeGheymat() {
+              var sanie = numinp.value;
+              var noeKhedmat = nkh.value;
+              var gheymat = "";
+              if (noeKhedmat == "motion3d") {
+                if (sanie > 0 && sanie <= 6) {
+                  gheymat = 500000;
+                } else if (sanie >= 7 && sanie <= 30) {
+                  gheymat = sanie * 62000;
+                } else if (sanie >= 31 && sanie <= 60) {
+                  gheymat = sanie * 57000;
+                } else if (sanie >= 61) {
+                  gheymat = sanie * 52000;
+                }
+              } else if (noeKhedmat == "motion2d") {
+                if (sanie > 0 && sanie <= 6) {
+                  gheymat = 35000;
+                } else if (sanie >= 7 && sanie <= 30) {
+                  gheymat = sanie * 55000;
+                } else if (sanie >= 31 && sanie <= 60) {
+                  gheymat = sanie * 52000;
+                } else if (sanie >= 61) {
+                  gheymat = sanie * 49000;
+                }
+              } else {
+                gheymat = "زمان نادرست وارد شده است.";
+              }
+              if (cit.checked == true) {
+                gheymat += 500000;
+              }
+              document.getElementById("gheymatt").innerHTML =
+                parseInt(gheymat).toLocaleString();
+            }
+            function showDetails() {
+              var i, classes;
+              i = 2;
+              classes = document.getElementsByClassName("showit");
+
+              classes[0].style.display = "block";
+              classes[1].style.display = "grid";
+              classes[2].style.display = "inline";
+              classes[3].style.display = "grid";
+              classes[4].style.display = "inline";
+              classes[5].style.display = "inline";
+            }
+            const allRanges = document.querySelectorAll(".range-wrap");
+            allRanges.forEach(wrap => {
+              const range = wrap.querySelector(".range");
+              const bubble = wrap.querySelector(".bubble");
+
+              range.addEventListener("input", () => {
+                setBubble(range, bubble);
+              });
+
+              // setting bubble on DOM load
+              setBubble(range, bubble);
+            });
+
+            function setBubble(range, bubble) {
+              const val = range.value;
+
+              const min = range.min || 0;
+              const max = range.max || 100;
+
+              const offset = Number(((val - min) * 100) / (max - min));
+
+              bubble.textContent = val;
+
+              // yes, 14px is a magic number
+              bubble.style.left = `calc(${offset}% - 14px)`;
+            }
+
+            nkh.addEventListener("change", showDetails);
+            numinp.addEventListener("input", mohasebeGheymat);
+            cit.addEventListener("change", mohasebeGheymat);
+            nkh.addEventListener("change", mohasebeGheymat);
+          </script>
+        </form>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
