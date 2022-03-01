@@ -12,6 +12,17 @@ form {
   width: 260px;
   text-align: center;
 }
+body video {
+  mix-blend-mode: screen;
+}
+.entekhab {
+  text-align: center;
+  font-size: 30px;
+  line-height: 23px;
+  position: absolute;
+  top: 195px;
+  right: -35px;
+}
 .closebutton {
   display: none;
   cursor: pointer;
@@ -527,7 +538,7 @@ form {
 
 /*  Hide Original */
 .range {
-  width: 110%;
+  width: 115%;
   cursor: pointer;
   opacity: 0;
 }

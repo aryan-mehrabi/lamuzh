@@ -13,6 +13,7 @@ $(document).ready(function (jq) {
   const $circle1 = $(".maincircle");
   const $circle2 = $(".maincircle2");
   const $form = $("form");
+  const $choose = $(".entekhab");
   const forms = [$form, $form, $form, "", "", ""];
 
   const icons = [
@@ -67,8 +68,10 @@ $(document).ready(function (jq) {
 
   for (let index = 0; index < icons.length; index++) {
     const icon = icons[index];
+
     icon.on("click", function () {
       const $self = $(this);
+      $choose.fadeOut();
       $circle2.fadeIn(function () {
         $circle1.fadeOut();
         if (forms[index]) {
@@ -91,6 +94,7 @@ $(document).ready(function (jq) {
       $closeButton.fadeIn();
       $closeButton.on("click", function () {
         $circle1.fadeIn(function () {
+          $choose.fadeIn();
           $circle2.fadeOut();
           if (forms[index]) {
             forms[index].fadeOut();
