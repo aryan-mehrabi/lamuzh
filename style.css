@@ -1,7 +1,11 @@
+@font-face {
+  font-family: "Mj_Extender X4 Super Fit";
+  src: url("./fonts/Mj_Extender\ X4\ Super\ Fit.woff");
+}
 body {
   color: white;
   font-size: 18px;
-  font-family: Mj_Extender X4 Super Fit;
+  font-family: "Mj_Extender X4 Super Fit";
   background-color: #0f191d;
 }
 form {
