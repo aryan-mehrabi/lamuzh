@@ -1,4 +1,4 @@
-$(document).ready(function (jq) {
+$(document).ready(function () {
   const $icons = $("video");
   const $2dIcon = $icons.filter(".twod");
   const $3dIcon = $icons.filter(".threed");
@@ -15,6 +15,10 @@ $(document).ready(function (jq) {
   const $form = $("form");
   const $choose = $(".entekhab");
   const forms = [$form, $form, $form, "", "", ""];
+  var numinp = document.getElementById("sec");
+  var nkh = document.getElementById("noekhedmat");
+  var cit = document.getElementById("checkit");
+  const $computeContainer = $(".compute-container")
 
   const icons = [
     $2dIcon,
@@ -97,9 +101,13 @@ $(document).ready(function (jq) {
           $choose.fadeIn();
           $circle2.fadeOut();
           if (forms[index]) {
-            forms[index].fadeOut();
+            forms[index].fadeOut(() => {
+              $computeContainer.hide();
+              nkh.value = "";  
+            });
           }
         });
+
         $icons
           .filter(i => i !== index)
           .fadeIn(1200, "linear", function (e) {
@@ -118,4 +126,85 @@ $(document).ready(function (jq) {
       });
     });
   }
+
+  function mohasebeGheymat() {
+    var sanie = numinp.value;
+    var noeKhedmat = nkh.value;
+    var gheymat = "";
+    if (noeKhedmat == "motion3d") {
+      if (sanie > 0 && sanie <= 6) {
+        gheymat = 500000;
+      } else if (sanie >= 7 && sanie <= 30) {
+        gheymat = sanie * 62000;
+      } else if (sanie >= 31 && sanie <= 60) {
+        gheymat = sanie * 57000;
+      } else if (sanie >= 61) {
+        gheymat = sanie * 52000;
+      }
+    } else if (noeKhedmat == "motion2d") {
+      if (sanie > 0 && sanie <= 6) {
+        gheymat = 35000;
+      } else if (sanie >= 7 && sanie <= 30) {
+        gheymat = sanie * 55000;
+      } else if (sanie >= 31 && sanie <= 60) {
+        gheymat = sanie * 52000;
+      } else if (sanie >= 61) {
+        gheymat = sanie * 49000;
+      }
+    } else {
+      gheymat = "زمان نادرست وارد شده است.";
+    }
+    if (cit.checked == true) {
+      gheymat += 500000;
+    }
+    document.getElementById("gheymatt").innerHTML =
+      parseInt(gheymat).toLocaleString();
+  }
+
+  function showDetails() {
+    var i, classes;
+    i = 2;
+    classes = document.getElementsByClassName("showit");
+
+    classes[0].style.display = "block";
+    classes[1].style.display = "grid";
+    classes[2].style.display = "inline";
+    classes[3].style.display = "grid";
+    classes[4].style.display = "inline";
+    classes[5].style.display = "inline";
+  }
+
+  nkh.addEventListener("change", () => $computeContainer.show());
+  numinp.addEventListener("input", mohasebeGheymat);
+  cit.addEventListener("change", mohasebeGheymat);
+  nkh.addEventListener("change", mohasebeGheymat);
+
+  const allRanges = document.querySelectorAll(".range-wrap");
+  allRanges.forEach(wrap => {
+    const range = wrap.querySelector(".range");
+    const bubble = wrap.querySelector(".bubble");
+
+    range.addEventListener("input", () => {
+      setBubble(range, bubble);
+    });
+
+    // setting bubble on DOM load
+    setBubble(range, bubble);
+  });
+
+  function setBubble(range, bubble) {
+    const val = range.value;
+
+    const min = range.min || 0;
+    const max = range.max || 100;
+
+    const offset = Number(((val - min) * 100) / (max - min));
+
+    bubble.textContent = val;
+
+    // yes, 14px is a magic number
+    bubble.style.left = `calc(${offset}% - 14px)`;
+  }
+
+
 });

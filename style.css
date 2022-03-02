@@ -601,6 +601,11 @@ video {
   display: block;
 }
 
+.compute-container {
+  display: none;
+}
+
+
 @media (hover: hover) {
   .range-wrap:hover .bubble,
   .range-wrap:focus .bubble {
