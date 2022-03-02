@@ -536,9 +536,7 @@ body video {
   transition: height 100ms ease;
 }
 
-.range-wrap:hover::before {
-  height: 10px;
-}
+
 
 /*  Hide Original */
 .range {
@@ -565,12 +563,7 @@ body video {
   user-select: none; /*  Prevent Accidentally highlighting the number while sliding the cursor  */
 }
 
-.range-wrap:hover .bubble,
-.range-wrap:focus .bubble {
-  color: #ffffff;
-  transform: translateY(-50%) scale(1.5);
-  padding: 0.1em;
-}
+
 .noekhedmat {
   background-image: url(img/Noe\ khedmat.SVG);
   background-position: center;
@@ -609,6 +602,18 @@ body video {
 
 .display {
   display: block;
+}
+@media (hover:hover) {
+  .range-wrap:hover .bubble,
+.range-wrap:focus .bubble {
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.5);
+  padding: 0.1em;
+}
+.range-wrap:hover::before {
+  height: 10px;
+}
+
 }
 
 /* 
