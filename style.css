@@ -304,13 +304,16 @@ video {
   z-index: -1;
   transition: 0.5s;
   transition-delay: 0.3s;
+  text-align: center;
 }
 .twotxt {
-  top: -33%;
+  top: -34%;
   right: -100%;
   opacity: 0%;
   text-align: center;
   line-height: 80%;
+  font-size: 22px;
+
 }
 .threetxt {
   top: 86.2%;
@@ -318,6 +321,8 @@ video {
   opacity: 0%;
   text-align: center;
   line-height: 80%;
+  font-size: 22px;
+
 }
 .webtxt {
   top: 207.2%;
@@ -338,12 +343,14 @@ video {
   right: -100%;
   opacity: 0%;
   font-size: 22px;
+  text-align: center;
 }
 .logotxt {
   top: 208px;
   left: -130px;
   font-size: 22px;
   opacity: 0%;
+  text-align: center;
 }
 
 .twod:hover ~ .rect1 {
@@ -364,7 +371,7 @@ video {
   right: -250;
 }
 .twod:hover ~ .twotxt {
-  right: -290px;
+  right: -283px;
   opacity: 100%;
 }
 .twotxt-hover {
@@ -387,7 +394,7 @@ video {
   right: -250;
 }
 .threed:hover ~ .threetxt {
-  right: -487px;
+  right: -485px;
   opacity: 100%;
 }
 .threetxt-hover {
@@ -404,7 +411,7 @@ video {
 }
 .video-editing:hover ~ .desk3 {
   opacity: 1;
-  right: -315px;
+  right: -308px;
   transition-delay: 0.3s;
 }
 .desk3-hover {
@@ -517,6 +524,8 @@ video {
   width: 100%;
   padding: 1.5em 0; /*  Giving more room for hover  */
   max-width: 400px;
+  right: 23px;
+  top: 6px;
 }
 
 /* Custom Bar */
@@ -526,12 +535,13 @@ video {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
-  width: 110%;
+  width: 115%;
   height: 8px;
   display: block;
   position: absolute;
   border-radius: 7px;
   top: 50%;
+  right: -43px;
   transform: translateY(-50%);
   transition: height 100ms ease;
 }
@@ -569,7 +579,7 @@ video {
   background-color: #a3876d;
   border: none;
   border-radius: 5px;
-  width: 80%;
+  width: 85%;
   height: 30px;
   font-family: Mj_Extender X4 Super Fit;
   font-size: 16px;

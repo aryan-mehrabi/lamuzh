@@ -131,31 +131,51 @@ $(document).ready(function () {
     var sanie = numinp.value;
     var noeKhedmat = nkh.value;
     var gheymat = "";
-    if (noeKhedmat == "motion3d") {
+    if (noeKhedmat == "Motiongraphic2d") {
       if (sanie > 0 && sanie <= 6) {
         gheymat = 500000;
       } else if (sanie >= 7 && sanie <= 30) {
+        gheymat = sanie * 79000;
+      } else if (sanie >= 31 && sanie <= 60) {
+        gheymat = sanie * 74000;
+      } else if (sanie >= 61) {
+        gheymat = sanie * 70000;
+      }
+    } else if (noeKhedmat == "Logoanimation2d") {
+      if (sanie > 0 && sanie <= 6) {
+        gheymat = 500000;
+      } else if (sanie >= 3 && sanie <= 10) {
+        gheymat = sanie * 85000;
+      } else if (sanie >= 10 && sanie <= 15) {
+        gheymat = sanie * 80000;
+      }
+    } else if (noeKhedmat == "postermotion") {
+      if (sanie > 0 && sanie <= 6) {
+        gheymat = 350000;
+      } else if (sanie >= 7 && sanie <= 30) {
         gheymat = sanie * 62000;
       } else if (sanie >= 31 && sanie <= 60) {
-        gheymat = sanie * 57000;
+        gheymat = sanie * 58000;
       } else if (sanie >= 61) {
-        gheymat = sanie * 52000;
+        gheymat = sanie * 53000;
       }
-    } else if (noeKhedmat == "motion2d") {
+   }  else if (noeKhedmat == "Analys") {
       if (sanie > 0 && sanie <= 6) {
-        gheymat = 35000;
+        gheymat = 700000;
       } else if (sanie >= 7 && sanie <= 30) {
-        gheymat = sanie * 55000;
+        gheymat = sanie * 90000;
       } else if (sanie >= 31 && sanie <= 60) {
-        gheymat = sanie * 52000;
+        gheymat = sanie * 87000;
       } else if (sanie >= 61) {
-        gheymat = sanie * 49000;
+        gheymat = sanie * 80000;
       }
-    } else {
+    }
+    
+    else {
       gheymat = "زمان نادرست وارد شده است.";
     }
     if (cit.checked == true) {
-      gheymat += 500000;
+      gheymat += 1200000;
     }
     document.getElementById("gheymatt").innerHTML =
       parseInt(gheymat).toLocaleString();
