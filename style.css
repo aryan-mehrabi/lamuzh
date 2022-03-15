@@ -430,7 +430,7 @@ video {
 }
 .logo-designing:hover ~ .logotxt, .logotxt-hover{
   opacity: 1;
-  left: -220px;
+  left: -230px;
 }
 .design:hover ~ .rect6, .rect6-hover{
   top: -100px;
