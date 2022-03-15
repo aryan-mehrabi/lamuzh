@@ -347,7 +347,7 @@ video {
 }
 .logotxt {
   top: 208px;
-  left: -130px;
+  left: -133px;
   font-size: 22px;
   opacity: 0%;
   text-align: center;
@@ -430,7 +430,7 @@ video {
 }
 .logo-designing:hover ~ .logotxt, .logotxt-hover{
   opacity: 1;
-  left: -205px;
+  left: -220px;
 }
 .design:hover ~ .rect6, .rect6-hover{
   top: -100px;
