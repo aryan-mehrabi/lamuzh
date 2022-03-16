@@ -347,7 +347,7 @@ video {
 }
 .composingtxt {
   top: 208px;
-  left: -130px;
+  left: -133px;
   font-size: 22px;
   opacity: 0%;
   text-align: center;
@@ -430,7 +430,7 @@ video {
 }
 .composing:hover ~ .composingtxt, .composingtxt-hover{
   opacity: 1;
-  left: -205px;
+  left: -220px;
 }
 .design:hover ~ .rect6, .rect6-hover{
   top: -100px;
