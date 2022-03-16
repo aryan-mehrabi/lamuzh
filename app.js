@@ -4,7 +4,7 @@ $(document).ready(function () {
   const $3dIcon = $icons.filter(".threed");
   const $videoEditingIcon = $icons.filter(".video-editing");
   const $webIcon = $icons.filter(".web");
-  const $logoDesigning = $icons.filter(".logo-designing");
+  const $composing = $icons.filter(".composing");
   const $designIcon = $icons.filter(".design");
   const $rectangles = $(".rect");
   const $desks = $(".desk");
@@ -25,7 +25,7 @@ $(document).ready(function () {
     $3dIcon,
     $videoEditingIcon,
     $webIcon,
-    $logoDesigning,
+    $composing,
     $designIcon,
   ];
   const opacities = [
@@ -40,7 +40,7 @@ $(document).ready(function () {
     "threed-hover",
     "video-editing-hover",
     "web-hover",
-    "logo-designing-hover",
+    "composing-hover",
     "design-hover",
   ];
   const textHover = [
@@ -48,7 +48,7 @@ $(document).ready(function () {
     "threetxt-hover",
     "videotxt-hover",
     "webtxt-hover",
-    "logotxt-hover",
+    "composingtxt-hover",
     "designtxt-hover",
   ];
 
